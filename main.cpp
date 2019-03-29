@@ -15,3 +15,19 @@
  *
  *
  */
+#include <iostream>
+#include <stack>
+#include <queue>
+#include "Book_Class.cpp"
+#include "Employee_Class.cpp"
+
+using namespace std;
+
+int main(){
+
+    stack<book> library;
+    stack<book> archive;
+    priority_queue<employee> employees;
+
+    return 0;
+}
