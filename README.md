@@ -1,5 +1,5 @@
 # Project 1
-# Team Members: Adam Smith, David Leatherman, 
+# Team Members: Adam Smith, David Leatherman, Brad Starnes
 Project Option 1B - Book Tracker
 
 **Member Responsibilities**

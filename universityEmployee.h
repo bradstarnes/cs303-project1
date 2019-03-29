@@ -6,6 +6,7 @@
 #define CS303_PROJECT1_UNIVERSITYEMPLOYEE_H
 
 
+
 class universityEmployee {
 
 private:
@@ -15,6 +16,8 @@ private:
 
 public:
 
+    universityEmployee();
+    universityEmployee(string newEmployeeName);
 
 };
 
