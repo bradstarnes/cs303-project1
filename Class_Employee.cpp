@@ -15,7 +15,7 @@ public:
     string lName;
     int empID;
     int bookCnt;
-    int priority;
+    double priority;
     time_t receivedCurrentBook;
     time_t passedOnBook;
     time_t timeWithBook;
