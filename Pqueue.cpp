@@ -16,7 +16,7 @@
  *
  */
 
-#include "pQueue.hpp"
+#include "Pqueue.h"
 
 pQueue::pQueue(){}
 void pQueue::addEmployee(Employee* temp){
