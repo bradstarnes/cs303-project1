@@ -4,9 +4,9 @@ Project Option 1B - Book Tracker
 
 **Member Responsibilities**
 
-	Adam: Employee Class, Book Class, UML Layout (initial), Main.cpp Methods
+	Adam: Employee Class, Book Class, Main.cpp Methods, Priority_Queue
 	
-	David: Priority_Queue, Algorithm Design, UML Layout (Later)
+	David: Algorithm Design, Big-O Analysis, Group Report, UML Design
 	
 	Brad: Main.cpp Internals, GIT Managment, 
 	
