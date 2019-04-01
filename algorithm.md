@@ -1,5 +1,6 @@
 #Algorithm
 
+
 Algorithm:
 Goal:
 -    Keep track of two lists of book types

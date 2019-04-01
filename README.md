@@ -2,6 +2,8 @@
 # Team Members: Adam Smith, David Leatherman, Brad Starnes
 Project Option 1B - Book Tracker
 
+
+
 **Member Responsibilities**
 
 	Adam: Wrote Classes, Attempted Prority Queue
