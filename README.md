@@ -1,25 +1,17 @@
 # Project 1
-# Team Members: Adam Smith, David Leatherman, 
+# Team Members: Adam Smith, David Leatherman, Brad Starnes
 Project Option 1B - Book Tracker
 
 **Member Responsibilities**
 
-	Adam: 
+	Adam: Employee Class, Book Class, UML Layout (initial), Main.cpp Methods
 	
-	David:
+	David: Priority_Queue, Algorithm Design, UML Layout (Later)
 	
-	Brad:
+	Brad: Main.cpp Internals, GIT Managment, 
 	
 **To-Do**
 
-- Book Class
-	* Book List Tracker
-- Employee Class
-	* Employee Tracking System (Whos Next)
-- Book Retention Tracker
-- UML Layout
-- Main.cpp
-- Algorithm Design
 
 **Project Guidelines (Rules)**
 
