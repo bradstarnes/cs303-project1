@@ -16,7 +16,7 @@
  *
  */
 
-#include “Class_Employee.h”
+#include "Class_Employee.h"
 #include <iostream>
 #include <ctime>
 #include <iomanip>
@@ -38,7 +38,7 @@ public:
     //Class Constructor
     employee(string first, string last){
 
-        owner = first + ” ” + last;
+        owner = first + " " + last;
         int bookCnt = 0;
         double priority = getPriority();
 
@@ -64,7 +64,7 @@ public:
     void checkOut(string title)
     {
         if(find(begin(haveRead), end(haveRead), title) == end(haveRead)){
-            cout << “Title has already been read: ” << title << endl;
+            cout << "Title has already been read: " << title << endl;
         }
         else{//if the title is already read, it will do nothing
             time_t now = getTime();

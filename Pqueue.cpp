@@ -22,13 +22,13 @@ pQueue::pQueue(){}
 void pQueue::addEmployee(Employee* temp){
     WorkQueue.push_back(temp);
 }
-Employee* pQueue::pop_max(){ // pulls highest priority from queue : O(n)
-    Employee *max = *WorkQueue.begin(); // assume max is first element
+Employee* pQueue::pop_max(){
+    Employee *max = *WorkQueue.begin();
     vector<Employee*>::iterator it, toErase;
     it = toErase = WorkQueue.begin();
-    it++; // start at second element so we don't compare max to itself
+    it++;
     for (it; it != WorkQueue.end(); it++){
-        if ((max->getWait() - max->getRetain()) < ((*it)->getWait() - (*it)->getRetain())){ // if new max is found, update pointers
+        if ((max->getWait() - max->getRetain()) < ((*it)->getWait() - (*it)->getRetain())){
             max = *it;
             toErase = it;
         }
@@ -36,12 +36,12 @@ Employee* pQueue::pop_max(){ // pulls highest priority from queue : O(n)
     WorkQueue.erase(toErase);
     return max;
 }
-Employee* pQueue::top(){ // O(n)
-    Employee *max = *WorkQueue.begin(); // assume max is first element
+Employee* pQueue::top(){
+    Employee *max = *WorkQueue.begin();
     vector<Employee*>::iterator it = WorkQueue.begin();
-    it++; // start at second element so we don't compare max to itself
+    it++;
     for (it; it != WorkQueue.end(); it++){
-        if ((max->getWait() - max->getRetain()) < ((*it)->getWait() - (*it)->getRetain())){ // if new max is found, update pointer
+        if ((max->getWait() - max->getRetain()) < ((*it)->getWait() - (*it)->getRetain())){
             max = *it;
         }
     }

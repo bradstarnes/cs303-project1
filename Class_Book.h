@@ -21,12 +21,7 @@
 #define CS303_PROJECT1_BOOK_H
 
 
-class book {
-
-private:
-
-public:
-
+class Class_Book {
 
 };
 
