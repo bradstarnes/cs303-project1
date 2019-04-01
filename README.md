@@ -4,11 +4,11 @@ Project Option 1B - Book Tracker
 
 **Member Responsibilities**
 
-	Adam: 
+	Adam: Wrote Classes, Attempted Prority Queue
 	
-	David:
+	David: Attempted Prority Queue, Algorithm, Group Project Report, Class Editing
 	
-	Brad:
+	Brad: Attempted Prority Queue, Wrote Class, Refactor Code, Manage Github Repo, Approve Pull Request, Comment Code, Reviewed Report
 	
 **To-Do**
 
