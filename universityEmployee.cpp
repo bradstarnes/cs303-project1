@@ -1,31 +1,62 @@
-//
-// Created by Brad Starnes on 2019-03-14.
-//
-
-#include "universityEmployee.h"
+#include “Class_Employee.h”
 #include <iostream>
 #include <ctime>
+#include <iomanip>
+#include <vector>
+#include <iterator>
 
 using namespace std;
 
 class employee{
+public:
+    //Class Attributes
+    string owner;
+    time_t receivedCurrentBook;
+    time_t passedOnBook;
+    time_t timeWithBook;
+    time_t timeWithOutBook;
+    vector <string> haveRead;
 
-    string fName;
-    string lName;
-    int empID = rand()%(5999999-1000000 + 1) + 1000000; // Create Random 7 Digit Employee ID
-    int bookCnt = 0;
-    int queuePosition;
-    time_t retentionTimeTotal;
-    time_t retentionTimeAvg;
+    //Class Constructor
+    employee(string first, string last){
 
-    time_t getTime(){
+        owner = first + ” ” + last;
+        int bookCnt = 0;
+        double priority = getPriority();
+
+        timeWithBook = 0;
+        timeWithOutBook = 0;
+        passedOnBook = 0;
+        receivedCurrentBook = 0;
+
+    }
+
+    //Class Methods
+    time_t getTime()
+    {
         time_t now = time(0);
     }
-    void timeHeld(time_t rcvd){
-        this->retentionTimeTotal += getTime() - rcvd;
-        if (bookCnt > 0)
-            this->retentionTimeAvg = this->retentionTimeTotal / this->bookCnt;
-
+    void turnIn(string title)
+    {
+        time_t now = getTime();
+        this->passedOnBook = now;
+        this->timeWithBook += now - receivedCurrentBook;
+        haveRead.push_back(title);
     }
-    
+    void checkOut(string title)
+    {
+        if(find(begin(haveRead), end(haveRead), title) == end(haveRead)){
+            cout << “Title has already been read: ” << title << endl;
+        }
+        else{//if the title is already read, it will do nothing
+            time_t now = getTime();
+            this->receivedCurrentBook = now;
+            this->timeWithOutBook += now - passedOnBook;
+        }
+    }
+    double getPriority()
+    {
+        double priority = difftime(timeWithOutBook, timeWithBook);
+        return priority;
+    }
 };

@@ -1,49 +1,70 @@
-//
-// Created by Adam Smith on 2019-03-05.
-//
-
-#include "Book.h"
+#include "Class_Book.h"
 #include <iostream>
-#include <ctime>
+#include <vector>
 
 using namespace std;
 
 class book {
+public:
 
-    time_t startDate;
-    time_t transferDate;
-    string title;
+    //Class Attributes
     string owner;
-    bool archived = false;
+    string title;
+    bool archived;
     int handledCnt = 0;
+    vector <string> readBy = {};
+    vector <string> employeePool = {};
 
-    time_t getTime(){
-        time_t now = time(0);
+    //Class Constructors
+    book(string titleOfBook)
+    {
+        title = titleOfBook;
+        archived = false;
+        handledCnt = 0;
     }
-    void printTime(){
-        char* dt = ctime(&now);
-        cout << "The local date and time is: " << dt << endl;
-    }
-    void newOwner(string old, string next){
-        // Change Owner String
-        // Increment the number of hands it has changed
 
-        this->owner = owner.replace(0, old.size(), next);
-        this->handledCnt += 1;
+    //Class Methods
+    void getEmployees(vector <string> employees)
+    {
+        int x = 0;
+        while (employees.size() >= x)
+        {
+            employeePool.push_back(employees[x]);
+            x++;
+        }
     }
-    bool endOfLife(int queueSize){
-        if (this->handledCnt < queueSize)
-            return false;
-        if (this->handledCnt >= queueSize)
-            return true;
+    void checkedOut(string newOwner, vector <book> *library, vector <book> *checkedOut)
+    {
+        if (find(begin(employeePool), end(employeePool), newOwner) == end(employeePool))
+        {
+            owner = newOwner;
+            handledCnt += 1;
+            checkedOut->push_back(library->front());//Push FRONT element of Library on END of CheckedOut
+            library->erase(library->begin());//Erase FRONT element of Library
+
+        } else
+            cout << "Employee has already read this book" << endl;
+    }
+    void returned(string oldOwner, vector <book> *library, vector <book> *checkedOut)
+    {
+        owner = "Stored in Library";
+        library->push_back(checkedOut->front());//Push FRONT element of CheckedOut on END of Library
+        checkedOut->erase(checkedOut->begin()); //Erase FRONT element of CheckedOut
+
+        if(handledCnt >= employeePool.size())
+            archived == true;
+    }
+    void archive(vector<book> *archiveStack, book *title)
+    {
+        archiveStack->push_back(*title);
     }
 
 };
 
-void book::withdrawBook(string title, string owner){
-    this->startDate = book.getTime();
-    this->transferDate = book.getTime();
-    this->handledCnt = 1;
-    this->title = title;
-    this->owner = owner;
-}
+//Examples
+//"EmployeeObject".checkedOut()
+//      --
+//"EmployeeObject".returned()
+//      -- changes owner to default, pushes oldOwners name onto readBy vector
+// Employee "Object Name" = new employee(title, fname, lname, employeeVector)
+//      -- Default employee Vector is empty
